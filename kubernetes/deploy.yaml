@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: product
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: product
+    spec:
+      containers:
+        - name: product
+          image: myeventstormingregistry.azurecr.io/product
+          ports:
+            - containerPort: 8080
