@@ -21,7 +21,7 @@ public class Application {
             product.setImageUrl("https://github.githubassets.com/images/modules/profile/profile-joined-github.png");
             product.setName(p);
             product.setPrice(i*10000);
-            product.setStock(i*10);
+            product.setStock(i*1000000);
             product.setImageUrl("/goods/img/"+p+".jpg");
 
             // 상품 디테일 추가 - 양방향 관계
