@@ -15,14 +15,7 @@ public class ProductController {
 
     @GetMapping("/product/{productId}")
     Product productStockCheck(@PathVariable(value = "productId") Long productId) {
-
         System.out.println("productStockCheck call");
-//        try {
-//            Thread.sleep(500);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-
         return  this.productService.getProductById(productId);
     }
 
@@ -32,6 +25,12 @@ public class ProductController {
     }
     @PutMapping("/product/decreaseStock/{productId}")
     void decreaseStock(@PathVariable(value = "productId") Long productId, @RequestBody int qty) {
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         this.productService.decreaseStock(productId, qty);
     }
 
