@@ -1,0 +1,31 @@
+version: 0.2
+
+env:
+  variables:
+    IMAGE_REPO_NAME: "products"
+
+phases:
+  install:
+    runtime-versions:
+      java: openjdk8
+  pre_build:
+    commands:
+      - echo Logging in to Amazon ECR...
+      - echo $IMAGE_REPO_NAME
+      - echo $AWS_ACCOUNT_ID
+      - echo $AWS_DEFAULT_REGION
+      - echo "commit id :" $CODEBUILD_RESOLVED_SOURCE_VERSION
+      - echo "tag name :" $CODEBUILD_SOURCE_VERSION
+      - echo "tag name2 :" $CODEBUILD_WEBHOOK_TRIGGER
+      - TAG_NAME=$(echo $CODEBUILD_WEBHOOK_TRIGGER | awk -F'/' '{print $2}')
+      - echo "tag name3 :" $TAG_NAME
+      - echo start command
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Building the Docker image...
+      - echo "tag name4 :" $TAG_NAME
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Pushing the Docker image...
