@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   variables:
-    _PROJECT_NAME: "products"
+    _PROJECT_NAME: "user09-products"
 
 phases:
   install:
