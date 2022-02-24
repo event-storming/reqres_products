@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   variables:
-    IMAGE_REPO_NAME: "products"
+    IMAGE_REPO_NAME: "user09-products"
 
 phases:
   install:
