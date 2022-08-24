@@ -11,6 +11,6 @@ spec:
     spec:
       containers:
         - name: product
-          image: myeventstormingregistry.azurecr.io/product
+          image: ungacr.azurecr.io/product:latest
           ports:
             - containerPort: 8080
