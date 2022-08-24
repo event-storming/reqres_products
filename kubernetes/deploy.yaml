@@ -1,16 +1,23 @@
-apiVersion : apps/v1beta1
-kind: Deployment
-metadata:
-  name: product
-spec:
+apiVersion: "apps/v1"
+kind: "Deployment"
+metadata: 
+  name: "product"
+  labels: 
+    app: "product"
+spec: 
+  selector: 
+    matchLabels: 
+      app: "product"
   replicas: 1
-  template:
-    metadata:
-      labels:
-        app: product
-    spec:
-      containers:
-        - name: product
-          image: ungacr.azurecr.io/product:latest
-          ports:
-            - containerPort: 8080
+  template: 
+    metadata: 
+      labels: 
+        app: "product"
+    spec: 
+      containers: 
+        - 
+          name: "product"
+          image: "ungacr.azurecr.io/product:latest"
+          ports: 
+            - 
+              containerPort: 80
