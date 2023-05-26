@@ -7,8 +7,8 @@ env:
 phases:
   install:
     runtime-versions:
-      java: corretto8
-      docker: 18
+      java: corretto17
+      docker: 20
     commands:
       - echo install kubectl
       - curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
